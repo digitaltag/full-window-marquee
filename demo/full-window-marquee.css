@@ -10,7 +10,7 @@
 	width: 18px;
 	height: 18px;
 	margin-left: 0px;
-	background: url(buttons/nav_buttons.png) no-repeat 0px 0px;
+	background: url(assets/marquee-nav.png) no-repeat 0px 0px;
 	cursor: pointer;
 }
 #marquee-nav a:hover { 
