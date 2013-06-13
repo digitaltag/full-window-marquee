@@ -1,0 +1,21 @@
+/*marquee-nav*/
+#marquee-nav { 
+	position: absolute; 
+	width: 100%;
+	text-align: center; 
+	margin:-30px 0 0 0;
+}
+#marquee-nav a {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-left: 0px;
+	background: url(buttons/nav_buttons.png) no-repeat 0px 0px;
+	cursor: pointer;
+}
+#marquee-nav a:hover { 
+	background-position: -25px 0px; 
+}
+#marquee-nav a.selected { 
+	background-position: -50px 0px; 
+}
