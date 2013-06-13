@@ -100,13 +100,13 @@
         }
         base.setWindowDims = function(){
             if($window.width() > 600 ){
-                base.options.winWidth = $window.width() - 160;
-                base.options.winHeight = $window.height() - 160;
-                $("#film-marquee").css("padding","0px 80px");
+                base.options.winWidth = $window.width() - (base.options.windowPadding * 2);
+                base.options.winHeight = $window.height() - (base.options.windowPadding * 2);
+                $("#film-marquee").css("padding", base.options.windowPadding+"px " + base.options.windowPadding+"px" + " 0px "+ base.options.windowPadding+"px");
                 $marqueeNav.show();
             }else{
                 base.options.winWidth = $window.width();
-                base.options.winHeight = $window.height() - 160;
+                base.options.winHeight = $window.height() - (base.options.windowPadding * 2);
                 $("#film-marquee").css("padding","0px");
                 $marqueeNav.hide();
             }
@@ -114,7 +114,7 @@
         }
         base.resizeAll = function(){
             base.setWindowDims();
-            $("#film-marquee").css("height", (base.options.winHeight + 80) - $("#masthead").height()).
+            $("#film-marquee").css("height", (base.options.winHeight + base.options.windowPadding) - $("#masthead").height()).
                                css("padding-bottom","0px")
             $(".film-block").each(function(index){
                 var $this = $(this);
@@ -130,9 +130,12 @@
                     base.scaleImage($thisImage, $this);
                 }
 
-                $filmInfo.css("position","absolute")
-                            .css("left",($(this).width()/2)-($filmInfo.width()/2)-50+"px")
-                            .css("top", ($(this).height()/2)-($filmInfo.height()/2)-30+"px");
+                //Check if information box exists
+                if(!$filmInfo){
+                    $filmInfo.css("position","absolute")
+                                .css("left",($(this).width()/2)-($filmInfo.width()/2)-50+"px")
+                                .css("top", ($(this).height()/2)-($filmInfo.height()/2)-30+"px");
+                }
             })
         }
 
@@ -164,7 +167,8 @@
         holdTime: 10000,
         animateTime: 1000,
         winWidth: 0,
-        winHeight: 0
+        winHeight: 0,
+        windowPadding:0
     };
     
     $.fn.marquee = function(options){

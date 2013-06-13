@@ -60,7 +60,11 @@
     </body>
 <script>
 	$(window).load(function() {
-        $("#film-marquee").marquee();
+        $("#film-marquee").marquee( {
+            windowPadding:200, 
+            holdTime:3000,
+            animateTime:500
+        });
 	})
 </script>
 
