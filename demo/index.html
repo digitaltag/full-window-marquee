@@ -1,13 +1,66 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Full Window Marquee</title>
-<link rel="stylesheet" href="full-window-marquee.css">
-<script src="jquery.1.10.1.js"></script>
-<script src="full-window-marquee.js"></script>
-</head>
-<body>
-	
-</body>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Full Window Marquee
+        </title>
+        <link rel="stylesheet" href="full-window-marquee.css">
+        <script src="jquery.1.10.1.js">
+        </script>
+        <script src="full-window-marquee.js">
+        </script>
+    </head>
+    
+    <body>
+        <div id="film-marquee">
+            <div class="film-block">
+                <img alt="Fantastic Mr Fox" src="images/fantastic-mr-fox.jpg">
+                <div class="film-info-center">
+                    <h2>Fantastic Mr Fox</h2>
+                    <p>Out now on DVD</p>
+                    <p>
+                        <a title="Fantastic Mr Fox" href="#">More Info &gt;</a>
+                    </p>
+                </div>
+            </div>
+            <div class="film-block">
+                <img alt="Like Crazy" src="images/like-crazy.jpg">
+                <div class="film-info-center">
+                    <h2>Like Crazy</h2>
+                    <p>Out now on DVD</p>
+                    <p>
+                        <a title="Like Crazy" href="#">More Info &gt;</a>
+                    </p>
+                </div>
+            </div>
+            <div class="film-block">
+                <img alt="Moonrise Kingdom" src="images/moonrise-kingdom.jpg">
+                <div class="film-info-center">
+                    <h2>Moonrise Kingdom</h2>
+                    <p>Out now on DVD</p>
+                    <p>
+                        <a title="Moonrise Kingdom" href="#">More Info &gt;</a>
+                    </p>
+                </div>
+            </div>
+            <div class="film-block">
+                <img alt="Young Adult" src="images/young-adult.jpg">
+                <div class="film-info-center">
+                    <h2>Young Adult</h2>
+                    <p>Out now on DVD</p>
+                    <p>
+                        <a title="Young Adult" href="#">More Info &gt;</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+<script>
+	$(window).load(function() {
+        $("#film-marquee").marquee();
+	})
+</script>
+
 </html>
